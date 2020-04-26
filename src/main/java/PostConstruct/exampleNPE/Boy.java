@@ -1,32 +1,30 @@
-package exampleNPE;
+package PostConstruct.exampleNPE;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
 @Component
-public class Girl {
+public class Boy {
 
     @Autowired
-    private Boy boy;
+    private Girl girl;
 
     @Getter
     private String toy;
 
     @PostConstruct
-    public void init() {
-        setToy();
-        System.out.println(boy.getToy().toLowerCase());
-    }
-
-    public void sayGirl()
+    public void init()
     {
-        System.out.println("I little girl");
+        setToy();
+        System.out.println(girl.getToy().toLowerCase());
     }
 
     private void setToy(){
-        this.toy = "doll";
+        this.toy = "car";
     }
+
 }

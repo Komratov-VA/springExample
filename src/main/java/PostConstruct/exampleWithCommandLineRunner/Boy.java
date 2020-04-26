@@ -1,13 +1,14 @@
-package exampleNPE;
+package PostConstruct.exampleWithCommandLineRunner;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
 @Component
-public class Boy {
+public class Boy implements CommandLineRunner {
 
     @Autowired
     private Girl girl;
@@ -16,18 +17,11 @@ public class Boy {
     private String toy;
 
     @PostConstruct
-    public void init()
-    {
-        setToy();
-        System.out.println(girl.getToy().toLowerCase());
-    }
-
-    public void sayBoy(){
-        System.out.println("I little boy");
-    }
-
     private void setToy(){
         this.toy = "car";
     }
 
+    public void run(String... args) throws Exception {
+        System.out.println(girl.getToy().toLowerCase());
+    }
 }

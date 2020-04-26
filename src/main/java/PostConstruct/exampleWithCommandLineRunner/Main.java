@@ -1,4 +1,4 @@
-package exampleOk;
+package PostConstruct.exampleWithCommandLineRunner;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
